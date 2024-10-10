@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
+<title>Prime Number Generator</title>
 </head>
 <body>
-    <h1>Welcome to Thymeleaf</h1>
+    <h2 id="title">Look for prime numbers in a specific range</h2>
+    <div id="form">
+        <form method="get" th:action="@{/prime}">
+            <label for="bound">Boundary: </label>
+            <input id="bound" name="bound" type="number" min="1" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="results">
+        <h3 th:text="'Results for this boundary ' + ${bound} + ':'"></h3>
+        <span th:each="prime, iterStat : ${primeNumbers}" th:text="!${iterStat.last} ? ${prime} + ', ' : ${prime}"></span>
+    </div>
 </body>
-</html>
