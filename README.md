@@ -4,6 +4,14 @@
 ## Description
 A Web app designed for calculating prime numbers in a range bounded by your desired upper limit.
 
+## Tools
+- Java 11
+- Spring 2.7.14
+- Maven 3.9.9
+
+## Before run
+Check if your environment variables are set up correctly for both Java and Maven versions!
+
 ## Run
 1. Clone the repo or download .zip file:
 
@@ -29,10 +37,6 @@ A Web app designed for calculating prime numbers in a range bounded by your desi
   http://localhost:8080/ (By default port 8080).
 ```
 
-## Tools
-- Java 11
-- Spring 2.7.14
-- Maven 3.9.9
 
 
 
