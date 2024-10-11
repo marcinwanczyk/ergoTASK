@@ -25,6 +25,7 @@ public class PrimeController {
         List<Integer> primeNumbers = primeService.checkPrime(bound);
         model.addAttribute("primeNumbers", primeNumbers);
         model.addAttribute("bound", bound);
+        model.addAttribute("visible", true);
         return "index";
     }
 }

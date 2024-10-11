@@ -15,7 +15,7 @@
             <button type="submit">Calculate</button>
         </form>
     </div>
-    <div id="results">
+    <div th:if="${visible}" id="results">
         <h3 th:text="'Results for boundary ' + ${bound} + ':'"></h3>
         <span th:each="prime, iterStat : ${primeNumbers}"
             th:text="!${iterStat.last} ? ${prime} + ', ' : ${prime}"></span>
