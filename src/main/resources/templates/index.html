@@ -11,11 +11,11 @@
     <div id="form">
         <form method="get" th:action="@{/prime}">
             <label for="bound">Boundary: </label>
-            <input id="bound" name="bound" type="number" min="1" required>
+            <input id="bound" name="bound" type="number" min="2" required>
             <button type="submit">Calculate</button>
         </form>
     </div>
-    <div id="results">
+    <div th:if="${visible}" id="results">
         <h3 th:text="'Results for boundary ' + ${bound} + ':'"></h3>
         <span th:each="prime, iterStat : ${primeNumbers}"
             th:text="!${iterStat.last} ? ${prime} + ', ' : ${prime}"></span>

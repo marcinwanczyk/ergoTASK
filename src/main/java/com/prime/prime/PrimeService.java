@@ -25,7 +25,9 @@ public class PrimeService {
         }
 
         // Every prime number is odd except 2 --> skip even numbers
-        primes.add(2);
+        if (bound >= 2) {
+            primes.add(2);
+        }
         for (int i = 3; i <= bound; i += 2) {
             if (isPrime.get(i)) {
                 primes.add(i);
