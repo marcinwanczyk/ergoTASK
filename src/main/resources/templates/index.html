@@ -6,6 +6,14 @@
         <form method="get" th:action="@{/prime}">
             <label for="bound">Boundary: </label>
             <input id="bound" name="bound" type="number" min="1" required>
+            <button type="submit">Calculate</button>
+        </form>
+    </div>
+    <div id="results">
+        <h3 th:text="'Results for boundary ' + ${bound} + ':'"></h3>
+        <span th:each="prime, iterStat : ${primeNumbers}" th:text="!${iterStat.last} ? ${prime} + ', ' : ${prime}"></span>
+    </div>
+</body>
             <button type="submit">Submit</button>
         </form>
     </div>
