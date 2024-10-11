@@ -22,6 +22,11 @@ public class PrimeController {
 
     @GetMapping("/prime")
     public String prime(@RequestParam int bound, Model model) {
+        if (bound < 2) {
+            model.addAttribute("error", "The bound must be 2 or greater.");
+            model.addAttribute("visible", false);
+            return "index";
+        }
         List<Integer> primeNumbers = primeService.checkPrime(bound);
         model.addAttribute("primeNumbers", primeNumbers);
         model.addAttribute("bound", bound);
