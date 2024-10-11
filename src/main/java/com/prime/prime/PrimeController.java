@@ -1,4 +1,5 @@
 package com.prime.prime;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,16 +16,15 @@ public class PrimeController {
     }
 
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model) {
         return "index";
     }
 
     @GetMapping("/prime")
     public String prime(@RequestParam int bound, Model model) {
-        List <Integer> primeNumbers = primeService.checkPrime(bound);
+        List<Integer> primeNumbers = primeService.checkPrime(bound);
         model.addAttribute("primeNumbers", primeNumbers);
         model.addAttribute("bound", bound);
         return "index";
     }
-
 }
